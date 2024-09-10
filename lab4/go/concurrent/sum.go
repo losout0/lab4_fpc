@@ -48,13 +48,7 @@ func main() {
 	sums := make(map[int][]string)
 	info := make(chan Tuple)
 	for _, path := range os.Args[1:] {
-		//_sum, err := sum(path)
 		go sum(path, info)
-
-		//if err != nil {
-		//	continue
-		//}
-		//sums[_sum] = append(sums[_sum], path)
 	}
 
 	for i := 0; i < len(os.Args[1:]); i++ {
